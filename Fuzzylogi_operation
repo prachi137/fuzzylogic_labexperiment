@@ -1,0 +1,39 @@
+import numpy as np
+a = {"a1":0.3, "a2":0.4, "a3":0.5, "a4":0.6}
+b ={"a1":0.9, "a2":0.7, "a3":0.5, "a4":0.3}
+--------------------------------------------------------
+def union(a,b):
+  c ={}
+  for i in a:
+    if a[i]>b[i]:
+      c[i]=a[i]
+    else:
+      c[i]=b[i]
+      print("union",c)
+      return c
+  union(a,b)
+--------------------------------------------------------
+def intersection(a,b):
+  d ={}
+  for i in a:
+    if a[i]<b[i]:
+      d[i]=a[i]
+    else:
+      d[i]=b[i]
+    print('intersection',d)
+    return d
+  intersection(a,b)
+------------------------------------------------------------
+def complement(a):
+   e = {}
+   for i in a:
+    e[i]=1-a[i]
+   print(e)
+   complement(a)
+------------------------------------------------------------
+def difference(a,b):
+  f = {}
+  for i in a:
+    f[i] = min(a[i],1-b[i])
+  print(f)
+difference(a,b)
